@@ -1,0 +1,28 @@
+
+* { box-sizing: border-box; font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif; }
+body { margin: 0; background: #f7f7f8; color: #222; }
+.topbar { background: #111; color: #fff; padding: 10px 16px; display:flex; align-items:center; justify-content:space-between; }
+.topbar .brand { font-weight: 700; }
+.topbar nav button { margin-left: 8px; }
+main { max-width: 1000px; margin: 24px auto; padding: 0 16px; }
+.card { background: #fff; padding: 16px; border-radius: 10px; box-shadow: 0 1px 4px rgba(0,0,0,0.1); margin-bottom: 16px; }
+label { display:block; margin: 8px 0; }
+input, select, textarea, button { width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 8px; }
+button { cursor: pointer; }
+button.primary { background: #2563eb; color: #fff; border: none; }
+button[disabled] { opacity: 0.6; cursor: not-allowed; }
+.hidden { display: none; }
+.timer-box { display:flex; align-items:center; gap: 12px; }
+#timer-display { font-size: 2rem; font-weight: 700; padding: 8px 12px; background:#f0f4ff; border-radius: 8px; }
+table { width: 100%; border-collapse: collapse; }
+th, td { border-bottom: 1px solid #eee; padding: 8px; text-align:left; vertical-align: top; }
+th { background: #fafafa; position: sticky; top: 0; }
+.hint { font-size: 0.9rem; color:#555; }
+.muted { color: #666; font-size: 0.9rem; }
+.modal { position: fixed; inset: 0; background: rgba(0,0,0,0.4); display:flex; align-items:center; justify-content:center; }
+.modal-card { background:#fff; padding:16px; border-radius:10px; width: min(600px, 90vw); }
+.modal.hidden { display: none; }
+.invoice { margin-top: 16px; }
+.invoice h2 { margin-top: 16px; }
+.invoice table { margin-top: 8px; }
+.invoice .subtle { color:#555; font-size: 0.95rem; }

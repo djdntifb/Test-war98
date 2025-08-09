@@ -1,0 +1,101 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Time Tracker (Prototype)</title>
+  <link rel="stylesheet" href="./assets/styles.css"/>
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">⏱️ Time Tracker — Prototype</div>
+    <nav id="nav" class="hidden">
+      <button data-view="timer">Timer</button>
+      <button data-view="timesheet">Timesheet</button>
+      <button data-view="approvals">Approvals</button>
+      <button data-view="invoices">Invoices</button>
+      <button id="logout">Logout</button>
+    </nav>
+  </header>
+
+  <main id="app">
+    <section id="login-view" class="card">
+      <h1>Login</h1>
+      <p>Use one of the seeded dummy accounts:</p>
+      <ul class="hint">
+        <li>Admin: alex.morgan@example.com / demo123</li>
+        <li>Manager: jordan.lee@example.com / demo123</li>
+        <li>Consultant: taylor.reed@example.com / demo123</li>
+      </ul>
+      <label>Email <input type="email" id="email" value="alex.morgan@example.com"/></label>
+      <label>Password <input type="password" id="password" value="demo123"/></label>
+      <button id="login-btn">Login</button>
+      <p class="muted">No backend here — data lives in your browser for testing.</p>
+    </section>
+
+    <section id="timer-view" class="card hidden">
+      <h1>Timer</h1>
+      <div id="active-user"></div>
+      <label>Client
+        <select id="client-select"></select>
+      </label>
+      <div class="timer-box">
+        <div id="timer-display">00:00:00</div>
+        <button id="start-stop-btn" class="primary">Start</button>
+      </div>
+    </section>
+
+    <section id="timesheet-view" class="card hidden">
+      <h1>Timesheet</h1>
+      <table id="timesheet-table">
+        <thead>
+          <tr>
+            <th>Date</th><th>Client</th><th>Start</th><th>Stop</th><th>Hours</th><th>Status</th><th>Note</th><th>Actions</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </section>
+
+    <section id="approvals-view" class="card hidden">
+      <h1>Weekly Approvals</h1>
+      <p class="muted">Manager/Admin can approve submitted entries; approved entries lock.</p>
+      <table id="approvals-table">
+        <thead>
+          <tr>
+            <th>User</th><th>Date</th><th>Client</th><th>Hours</th><th>Status</th><th>Action</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </section>
+
+    <section id="invoices-view" class="card hidden">
+      <h1>Invoices</h1>
+      <label>Client
+        <select id="invoice-client"></select>
+      </label>
+      <label>Month (YYYY-MM)
+        <input type="month" id="invoice-month"/>
+      </label>
+      <button id="gen-invoice" class="primary">Generate</button>
+
+      <div id="invoice-output" class="invoice"></div>
+    </section>
+  </main>
+
+  <div id="stop-modal" class="modal hidden">
+    <div class="modal-card">
+      <h3>Stop Timer — Add Work Description</h3>
+      <textarea id="work-note" rows="4" placeholder="Brief description of work performed..."></textarea>
+      <div class="actions">
+        <button id="cancel-stop">Cancel</button>
+        <button id="confirm-stop" class="primary">Save</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="./assets/app.js"></script>
+</body>
+</html>
